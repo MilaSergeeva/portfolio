@@ -1,19 +1,24 @@
 // Картиночки
 const body = document.querySelector('.body');
-const popup = document.querySelector('.popup');
-const popupCardView = document.querySelector('.popup__container');
+const popups = document.querySelectorAll('.popup');
+const popupContainer = document.querySelector('.popup__container');
 const popupCardImg = document.querySelector('.popup__img');
 const popupCardTitle = document.querySelector('.popup__title');
-const popupCardDiscription = document.querySelector('.popup__disctiption');
-const popupGitHub = document.querySelector('.popup-link__gitHub');
+const popupCardDiscription = document.querySelector('.popup__discription');
+const popupGitHub = document.querySelector('.popup__github-link');
 const popupVisitApp = document.querySelector('.popup__app-link');
+const popupCardView = document.querySelector('.popup__card');
+const popupPdfView = document.querySelector('.popup__docs');
 
-const popupCloseBtn = document.querySelector('.popup__close');
+const popupCloseBtns = document.querySelectorAll('.popup__close');
 const cards = document.querySelector('.cards');
 
 const navButton = document.querySelector('.navbar__menu-button');
 const navMenu = document.querySelector('.navbar');
 const navMenuItem = document.querySelectorAll('.navbar__menu-item');
+const docPdf = document.querySelectorAll('.contact__docs-pdf');
+const popupDocs = document.querySelector('.popup__docs');
+const popupDocsImg = document.querySelector('.popup__doc');
 
 const initialCards = [
     {
@@ -97,6 +102,8 @@ const initialCards = [
     },
 ];
 
+docPdf[0].addEventListener('click', openPopupPdf);
+
 navButton.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
@@ -111,28 +118,30 @@ navMenuItem.forEach((item) =>
     })
 );
 
-const closePopupByEscListener = function (event) {
+const closePopupByEsc = function (event) {
     if (event.keyCode === 27) {
         const popupOpened = document.querySelector('.popup_opened');
-
+        console.log('z nen');
         if (popupOpened) {
             togglePopupClass(popupOpened);
         }
     }
 };
 
-//Переключатель класса popup_opened
+//class toggle popup_opened
 const togglePopupClass = function (element) {
-    element.classList.toggle('popup_opened');
+    const popupElement = element.closest('.popup');
 
-    if (element.classList.contains('popup_opened')) {
-        document.addEventListener('keydown', closePopupByEscListener);
+    popupElement.classList.toggle('popup_opened');
+
+    if (popupElement.classList.contains('popup_opened')) {
+        document.addEventListener('keydown', closePopupByEsc);
     } else {
-        document.removeEventListener('keydown', closePopupByEscListener);
+        document.removeEventListener('keydown', closePopupByEsc);
     }
 };
 
-// закрыть popup при нажатии на зону вне popup
+// overlay close func
 const closePopupOverlay = function (event) {
     const popupElement = event.target;
 
@@ -141,20 +150,34 @@ const closePopupOverlay = function (event) {
     }
 };
 
-//функция открытия popup с просмотром картинки
+function openPopupPdf(event) {
+    if (event.target.alt === 'cv') {
+        popupDocsImg.src = './images/cvBig.png';
+    } else {
+        popupDocsImg.src = './images/diploma.png';
+    }
+
+    console.log(event.target);
+    togglePopupClass(popupDocs);
+}
+
+//open card popup func
 const openPopupCard = function (event) {
     popupCardImg.src = event.target.src;
     popupCardTitle.textContent = event.target.alt;
 
-    initialCards.findIndex((i) => i.title === event.target.alt);
+    console.log('event.target', event.target);
+    const insexOfCars = initialCards.findIndex((i) => i.title === event.target.alt);
 
-    popupCardDiscription.textContent = initialCards[i].description;
-    popupVisitApp.href = initialCards[i].url;
-    popupGitHub.href = initialCards[i].githubUrl;
+    popupCardDiscription.textContent = initialCards[insexOfCars].description;
+    popupVisitApp.href = initialCards[insexOfCars].url;
+    popupGitHub.href = initialCards[insexOfCars].githubUrl;
+
+    togglePopupClass(popupCardView);
 };
 
-//рендер карточки места
-function renderPlace(title, link) {
+//cards render
+function renderCard(title, link) {
     const cardsTemplateElement = document.querySelector('.card-template').content;
     const card = cardsTemplateElement.cloneNode(true);
 
@@ -164,42 +187,20 @@ function renderPlace(title, link) {
 
     cardImg.src = link;
     cardImg.alt = title;
-    //Просмотр картинки из галереи
+
     cardImg.addEventListener('click', openPopupCard);
-    //Бинды ивентов для элементов place
+
     return card;
 }
 
-//создание карточек для всех еллементов массива
 initialCards.forEach((element) => {
-    console.log('boom');
-    const renderedPlace = renderPlace(element.title, element.imgUrl);
-    // addPlace(element.title, element.link);
-    cards.append(renderedPlace);
-});
-
-//закрытие просмотра картинки
-popupCardView.addEventListener('click', closePopupOverlay);
-
-//закрытие popup
-popupCloseBtn.addEventListener('click', (event) => {
-    const popupElement = event.target.closest('.popup');
-
-    togglePopupClass(popupElement);
+    const renderedCards = renderCard(element.title, element.imgUrl);
+    cards.append(renderedCards);
 });
 
 // -------------scroll animation----------------
 
 let elementsToShow = document.querySelectorAll('.anim-on-scroll');
-
-// Detect request animation frame
-// let scroll =
-//     window.requestAnimationFrame ||
-//     // IE callback
-//     function (callback) {
-//         console.log('я тут');
-//         window.setTimeout(callback, 400);
-//     };
 
 console.log(elementsToShow);
 
@@ -214,15 +215,8 @@ const loop = () => {
             }
         }
     });
-
-    // scroll(loop);
 };
 
-// scroll(loop);
-// Call the loop for the first time
-// loop();
-
-// Helper function from: http://stackoverflow.com/a/7557433/274826
 function isElementInViewport(el) {
     let rect = el.getBoundingClientRect();
     return (
@@ -243,83 +237,14 @@ if (elementsToShow.length > 0) {
     }, 400);
 }
 
-// const animItems = document.querySelectorAll('.show-on-scroll');
-// let windowObject = document.body;
-// console.log(windowObject);
+//close popup
+popups.forEach((popup) => popup.addEventListener('click', closePopupOverlay));
+popups.forEach((popup) => popup.addEventListener('keydown', closePopupByEsc));
 
-// console.log(animItems);
+popupCloseBtns.forEach((el) => {
+    el.addEventListener('click', (event) => {
+        const popupElement = event.target.closest('.popup');
 
-// if (animItems.length > 0) {
-//     window.addEventListener('scloll', animOnScroll);
-
-//     function animOnScroll() {
-//         const content = document.querySelector('.smooth');
-//         console.log('я тут');
-//         for (let i = 0; i < animItems.length; i++) {
-//             console.log('тепеерь тут тут');
-//             const animItem = animItems[i];
-//             const animItemHeight = animItem.offsetHeight;
-//             const animItemOffset = offset(animItem).top;
-//             const animStart = 4;
-
-//             // console.log(animItem);
-//             console.log('animItemHeight', animItemHeight);
-//             console.log('animItemOffset', animItemOffset);
-//             // console.log(animStart);
-
-//             let animItemPoint = window.innerHeight - animItemHeight / animStart;
-
-//             console.log('animItemPoint', animItemPoint);
-//             console.log('window.innerHeight', window.innerHeight);
-
-//             if (animItemHeight > window.innerHeight) {
-//                 console.log('в if');
-//                 animItemPoint = window.innerHeight - window.innerHeight / animStart;
-//             }
-
-//             // const style = getComputedStyle(animItem);
-//             // const matrix = new WebKitCSSMatrix(style.webkitTransform);
-//             // const translateY = matrix.m42;
-//             // if (translateY !== 0) {
-//             //     animItemOffset += -translateY;
-//             // }
-
-//             const one = animItemOffset - animItemPoint;
-//             const two = animItemOffset + animItemHeight;
-
-//             console.log('one', one);
-//             console.log('two', two);
-
-//             if (document.body.scrollTop > one && document.body.scrollTop < two) {
-//                 animItem.classList.add('is-visible');
-//             } else {
-//                 if (!animItem.classList.contains('anim')) {
-//                     animItem.classList.remove('is-visible');
-//                 }
-//             }
-
-//             // if (pageYOffset > one && pageYOffset < two) {
-//             //     animItem.classList.add('is-visible');
-//             // } else {
-//             //     if (!animItem.classList.contains('anim')) {
-//             //         animItem.classList.remove('is-visible');
-//             //     }
-//             // }
-
-//             console.log(document.body.scrollTop);
-//         }
-//     }
-
-//     function offset(el) {
-//         const rect = el.getBoundingClientRect(),
-//             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-//             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//         console.log(window.pageYOffset, 'njldel');
-
-//         return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-//     }
-
-//     setTimeout(() => {
-//         animOnScroll();
-//     }, 400);
-// }
+        togglePopupClass(popupElement);
+    });
+});
