@@ -6,7 +6,7 @@
       <title>Portfolio</title>
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-      <link rel='stylesheet' href='./style.css'>
+      <!-- <link rel='stylesheet' href='../style.css'> -->
     </head>
 
     <body class="body">
@@ -128,14 +128,14 @@
                     <h2 class="contact-title anim-on-scroll anim-stop anim-start">contact</h2>
                     <div class="contact__docs anim-on-scroll anim-stop anim-opacity">
                         <figure class='card contact__docs-pdf'>
-                            <img class='card__img contact__docs-img' src="./images/diploma.png" alt="diplom">
+                            <img class='card__img contact__docs-img' src="<%=require('../images/diploma.png')%>" alt="diplom">
                             <figcaption class="card__container">
                                 <h3 class='card__title contact__docs-title'>Certificate of Completion</h3>
                             </figcaption>
                         </figure>
                         <figure class='card contact__docs-pdf'>
-                            <a href="./images/CV_Sergeeva_webD.pdf" target="_blank" class="">
-                                <img class='card__img contact__docs-img' src="./images/cv.png" alt="cv">
+                            <a href="../images/CV_Sergeeva_webD.pdf" target="_blank" class="">
+                                <img class='card__img contact__docs-img' src="<%=require('../images/cv.png')%>" alt="cv">
                             </a>
                             <figcaption class="card__container">
                               <h3 class='card__title contact__docs-title'>CV</h3>
@@ -199,6 +199,6 @@
             </figure> 
         </template>
 
-    <script src="./app.js"></script>
+    <!-- <script src="./index.js"></script> -->
     </body>
 </html>

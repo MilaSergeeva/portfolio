@@ -1,3 +1,17 @@
+import '../style.css';
+
+import diplomPjImg from '../images/diplom.png';
+import toDoImg from '../images/todoApp.png';
+import mestoReactImg from '../images/mestoReact.png';
+import mestoImg from '../images/mesto.png';
+import turbinaImg from '../images/turbina.png';
+import procastinateImg from '../images/procastinate.png';
+import travelRussiaImg from '../images/travel.png';
+import howToLearnImg from '../images/learn.png';
+import portfolioImg from '../images/portfolio.png';
+import diplom from '../images/diplom.png';
+import cv from '../images/cvBig.png';
+
 // Картиночки
 const body = document.querySelector('.body');
 const popups = document.querySelectorAll('.popup');
@@ -27,7 +41,7 @@ const initialCards = [
             "'News Explorer' it is a full stack React application to allow users find and save news.  To find news user need to enter keyword. It is possiple to sign-up and save news in users profile. ",
         githubUrl: 'https://github.com/MilaSergeeva/news-explorer-frontend',
         url: 'https://milasergeeva.github.io/news-explorer-frontend/',
-        imgUrl: './images/diplom.png',
+        imgUrl: diplomPjImg,
         id: 1,
     },
     {
@@ -36,7 +50,7 @@ const initialCards = [
             'A Vanilla JavaScript Todo App. You can use the input field to enter the title of a new task and add that task to the list by either clicking the plus icon or hitting return. It is possible to sort tasks as completed or uncompleted. Orange your tasks (drag and drob). Data saved in Local Storage',
         githubUrl: 'https://github.com/MilaSergeeva/to_do_vanillaJS',
         url: ' https://milasergeeva.github.io/to_do_vanillaJS/',
-        imgUrl: './images/todoApp.png',
+        imgUrl: toDoImg,
         id: 2,
     },
     {
@@ -45,7 +59,7 @@ const initialCards = [
             "'Mesto-React'. It is a full-stack single page application on React. It allows users to upload, view, like and delete photos, add . with following features - identification, authentication and authorization.",
         githubUrl: 'https://github.com/MilaSergeeva/react-mesto-api-full',
         url: 'https://mesto-react-front.herokuapp.com',
-        imgUrl: './images/mestoReact.png',
+        imgUrl: mestoReactImg,
         id: 3,
     },
     {
@@ -54,7 +68,7 @@ const initialCards = [
             "'Mesto' It is a single page application. OOP (class-based object-oriented js) ",
         githubUrl: 'https://github.com/MilaSergeeva/mesto',
         url: 'https://milasergeeva.github.io/mesto/',
-        imgUrl: './images/mesto.png',
+        imgUrl: mestoImg,
         id: 4,
     },
 
@@ -64,7 +78,7 @@ const initialCards = [
             "'Turbina' is a voluntary promotion project for the children's bookshop Marshak. It's a React web application with a music player and a feedback form. ",
         githubUrl: 'https://github.com/MilaSergeeva/turbina-dd',
         url: 'https://milasergeeva.github.io/turbina-dd/',
-        imgUrl: './images/turbina.png',
+        imgUrl: turbinaImg,
         id: 5,
     },
     {
@@ -72,7 +86,7 @@ const initialCards = [
         description: 'It is a study project. Simple JS generator of ideas for procrastination.',
         githubUrl: 'https://github.com/MilaSergeeva/procastinate',
         url: 'https://milasergeeva.github.io/procastinate/',
-        imgUrl: './images/procastinate.png',
+        imgUrl: procastinateImg,
         id: 6,
     },
     {
@@ -81,7 +95,7 @@ const initialCards = [
             'it is a single page web site with useful information about how to travel through Russia.  HTML, CSS, adaptive layout',
         githubUrl: 'https://github.com/MilaSergeeva/russian-travel',
         url: 'https://milasergeeva.github.io/russian-travel/',
-        imgUrl: './images/travel.png',
+        imgUrl: travelRussiaImg,
         id: 7,
     },
     {
@@ -89,7 +103,7 @@ const initialCards = [
         description: 'It is a single page app with tips on how to learn. HTML, CSS adaptive layout',
         githubUrl: 'https://github.com/MilaSergeeva/how-to-learn',
         url: 'https://mkvaratshelia.github.io/learn/',
-        imgUrl: './images/learn.png',
+        imgUrl: howToLearnImg,
         id: 8,
     },
     {
@@ -97,7 +111,7 @@ const initialCards = [
         description: 'It is a single page app to know me better',
         githubUrl: 'https://github.com/MilaSergeeva/portfolio',
         url: 'https://milasergeeva.github.io/portfolio/',
-        imgUrl: './images/portfolio.png',
+        imgUrl: portfolioImg,
         id: 9,
     },
 ];
@@ -152,9 +166,9 @@ const closePopupOverlay = function (event) {
 
 function openPopupPdf(event) {
     if (event.target.alt === 'cv') {
-        popupDocsImg.src = './images/cvBig.png';
+        popupDocsImg.src = cv;
     } else {
-        popupDocsImg.src = './images/diploma.png';
+        popupDocsImg.src = diplom;
     }
 
     console.log(event.target);
