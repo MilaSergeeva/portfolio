@@ -144,13 +144,13 @@
                             <figcaption class="docs-pdf__caption">
                                 <h3 class='docs-pdf__title'>Certificate of Completion</h3>
                             </figcaption>
-                            <img class='docs-pdf__img' src="<%=require('../images/diploma.png')%>" alt="diplom">
+                            <img class='docs-pdf__img' src="<%=require('../images/diploma.png')%>">" alt="diplom">
                         </figure>
                         <figure class='docs-pdf'>
                             <figcaption class="docs-pdf__caption">
                                 <h3 class='docs-pdf__title'>CV</h3>
                               </figcaption>
-                            <a href="../images/CV_Sergeeva_webD.pdf" target="_blank" class="">
+                            <a href="<%=require('../images/CV_Sergeeva_webD.pdf')%>" target="_blank" class="">
                                 <img class='docs-pdf__img' src="<%=require('../images/cv.png')%>" alt="cv">
                             </a>
                             
@@ -161,8 +161,12 @@
                     <div class="social-media">
                         <a href="www.linkedin.com/in/liudmila-sergeeva-927b69184" target="_blank" class="social-media__link"><i class="social-media__icon fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/MilaSergeeva" target="_blank" class="social-media__link"><i class="social-media__icon fab fa-github"></i></a>
-                        <i class="social-media__icon fas fa-phone-alt"></i>
-                        <p class='phone'>+47 464 70 083</p>
+                        <!-- <i class="social-media__icon fas fa-phone-alt"></i> -->
+                        <div class='phoneEmail'>
+                            <p class='contact'>tel: +47 464 70 083</p>
+                            <p class='contact'>e-mail: liudmila.sergeeva@hotmail.com</p>
+                        </div>
+                        
                     </div>
                 </div>
             </section>

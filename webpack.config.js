@@ -26,7 +26,7 @@ module.exports = {
             },
             {
                 // регулярное выражение, которое ищет все файлы с такими расширениями
-                test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+                test: /\.(png|svg|jpg|gif|woff(2)?|eot|pdf|ttf|otf)$/,
                 type: 'asset/resource',
             },
             {
@@ -40,6 +40,25 @@ module.exports = {
                     'postcss-loader',
                 ],
             },
+            // {
+            //     test: /\.(png|jpe?g|gif)$/i,
+            //     loader: 'file-loader',
+            //     options: {
+            //         outputPath: './images', // Chage this like 'public/images' or any other relative path to the root
+            //     },
+            //     exclude: /node_modules/,
+            // },
+            // {
+            //     test: /\.(png|jpg|gif)$/i,
+            //     use: [
+            //         {
+            //             loader: 'url-loader',
+            //             options: {
+            //                 limit: 8192,
+            //             },
+            //         },
+            //     ],
+            // },
         ],
     },
     plugins: [
