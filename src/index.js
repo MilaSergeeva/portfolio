@@ -9,20 +9,15 @@ import procastinateImg from '../images/procastinate.png';
 import travelRussiaImg from '../images/travel.png';
 import howToLearnImg from '../images/learn.png';
 import portfolioImg from '../images/portfolio.png';
-import diplom from '../images/diplom.png';
-import cv from '../images/cvBig.png';
+import diplom from '../images/diploma.png';
+// import cv from '../images/cvBig.png';
 
 // Картиночки
-const body = document.querySelector('.body');
 const popups = document.querySelectorAll('.popup');
-const popupContainer = document.querySelector('.popup__container');
 const popupCardImg = document.querySelector('.popup__img');
 const popupCardTitle = document.querySelector('.popup__title');
 const popupCardDiscription = document.querySelector('.popup__discription');
-const popupGitHub = document.querySelector('.popup__github-link');
-const popupVisitApp = document.querySelector('.popup__app-link');
 const popupCardView = document.querySelector('.popup__card');
-const popupPdfView = document.querySelector('.popup__docs');
 
 const popupCloseBtns = document.querySelectorAll('.popup__close');
 const popupDocs = document.querySelector('.popup__docs');
@@ -136,7 +131,6 @@ navMenuItem.forEach((item) =>
 const closePopupByEsc = function (event) {
     if (event.keyCode === 27) {
         const popupOpened = document.querySelector('.popup_opened');
-        console.log('z nen');
         if (popupOpened) {
             togglePopupClass(popupOpened);
         }
@@ -166,19 +160,14 @@ const closePopupOverlay = function (event) {
 };
 
 function openPopupPdf(event) {
-    if (event.target.alt === 'cv') {
-        popupDocsImg.src = cv;
-    } else {
-        popupDocsImg.src = diplom;
-    }
+    popupDocsImg.src = diplom;
 
-    console.log(event.target);
+    console.log(popupDocsImg, event.target);
     togglePopupClass(popupDocs);
 }
 
 //open card popup func
 const openPopupCard = function (event) {
-    console.log('event.target', event.target);
     const cardImg = event.target.previousElementSibling;
     popupCardImg.src = cardImg.src;
     popupCardTitle.textContent = cardImg.alt;
@@ -186,8 +175,6 @@ const openPopupCard = function (event) {
     const indexOfCard = initialCards.findIndex((i) => i.title === cardImg.alt);
 
     popupCardDiscription.textContent = initialCards[indexOfCard].description;
-    // popupVisitApp.href = initialCards[indexOfCard].url;
-    // popupGitHub.href = initialCards[indexOfCard].githubUrl;
 
     togglePopupClass(popupCardView);
 };
@@ -223,8 +210,6 @@ initialCards.forEach((element) => {
 
 let elementsToShow = document.querySelectorAll('.anim-on-scroll');
 let section = document.querySelectorAll('.main-content');
-
-console.log(elementsToShow, section);
 
 const loop = () => {
     [].forEach.call(elementsToShow, function (element) {

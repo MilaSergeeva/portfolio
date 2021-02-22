@@ -343,13 +343,17 @@ section:nth-child(4) {
     display: inline;
     font-size: 0.8rem;
     cursor: none;
+    padding: 0;
+    margin: 0;
 }
 
 .phoneEmail {
     position: absolute;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     transform: translateX(100%);
     font-size: 0.8rem;
+    justify-content: center;
 }
 
 .img-container {
@@ -1016,7 +1020,7 @@ section:nth-child(4) {
     }
 
     .phoneEmail {
-        transform: translate(0, -200%);
+        transform: translate(0, -150%);
     }
 }
 
@@ -1029,12 +1033,11 @@ section:nth-child(4) {
         grid-template-columns: repeat(1, minmax(150px, 250px));
         padding: 0;
     }
-    .contact__docs {
+    .docs-container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 2rem;
     }
 
     .docs-pdf {
@@ -1045,8 +1048,21 @@ section:nth-child(4) {
         height: 300px;
     }
 
+    .docs-pdf__title {
+        display: flex;
+        align-items: flex-end;
+    }
+
     section h2 {
         font-size: 1.2rem;
+    }
+
+    .contact-section {
+        max-height: 150vh;
+    }
+
+    .section__container-contacts {
+        margin-top: 4rem;
     }
 }
 
