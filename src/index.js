@@ -178,15 +178,16 @@ function openPopupPdf(event) {
 
 //open card popup func
 const openPopupCard = function (event) {
-    popupCardImg.src = event.target.src;
-    popupCardTitle.textContent = event.target.alt;
-
     console.log('event.target', event.target);
-    const insexOfCars = initialCards.findIndex((i) => i.title === event.target.alt);
+    const cardImg = event.target.previousElementSibling;
+    popupCardImg.src = cardImg.src;
+    popupCardTitle.textContent = cardImg.alt;
 
-    popupCardDiscription.textContent = initialCards[insexOfCars].description;
-    popupVisitApp.href = initialCards[insexOfCars].url;
-    popupGitHub.href = initialCards[insexOfCars].githubUrl;
+    const indexOfCard = initialCards.findIndex((i) => i.title === cardImg.alt);
+
+    popupCardDiscription.textContent = initialCards[indexOfCard].description;
+    // popupVisitApp.href = initialCards[indexOfCard].url;
+    // popupGitHub.href = initialCards[indexOfCard].githubUrl;
 
     togglePopupClass(popupCardView);
 };
@@ -201,13 +202,14 @@ function renderCard(title, link, ghLink, appLink) {
     const cardImg = card.querySelector('.card__img');
     const cardGitHub = card.querySelector('.card__github-link');
     const cardVisitApp = card.querySelector('.card__app-link');
+    const overlayLink = card.querySelector('.overlay');
 
     cardImg.src = link;
     cardImg.alt = title;
     cardGitHub.href = ghLink;
     cardVisitApp.href = appLink;
 
-    cardImg.addEventListener('click', openPopupCard);
+    overlayLink.addEventListener('click', openPopupCard);
 
     return card;
 }
