@@ -25,14 +25,15 @@ const popupCardView = document.querySelector('.popup__card');
 const popupPdfView = document.querySelector('.popup__docs');
 
 const popupCloseBtns = document.querySelectorAll('.popup__close');
-const cards = document.querySelector('.cards');
+const popupDocs = document.querySelector('.popup__docs');
+const popupDocsImg = document.querySelector('.popup__doc');
 
 const navButton = document.querySelector('.navbar__menu-button');
 const navMenu = document.querySelector('.navbar');
 const navMenuItem = document.querySelectorAll('.navbar__menu-item');
-const docPdf = document.querySelectorAll('.contact__docs-pdf');
-const popupDocs = document.querySelector('.popup__docs');
-const popupDocsImg = document.querySelector('.popup__doc');
+const docPdf = document.querySelectorAll('.docs-pdf');
+
+const cards = document.querySelector('.cards');
 
 const initialCards = [
     {
@@ -191,16 +192,20 @@ const openPopupCard = function (event) {
 };
 
 //cards render
-function renderCard(title, link) {
+function renderCard(title, link, ghLink, appLink) {
     const cardsTemplateElement = document.querySelector('.card-template').content;
     const card = cardsTemplateElement.cloneNode(true);
 
     card.querySelector('.card__title').textContent = title; //заполняем элемент карточки по индексу массива
 
     const cardImg = card.querySelector('.card__img');
+    const cardGitHub = card.querySelector('.card__github-link');
+    const cardVisitApp = card.querySelector('.card__app-link');
 
     cardImg.src = link;
     cardImg.alt = title;
+    cardGitHub.href = ghLink;
+    cardVisitApp.href = appLink;
 
     cardImg.addEventListener('click', openPopupCard);
 
@@ -208,24 +213,35 @@ function renderCard(title, link) {
 }
 
 initialCards.forEach((element) => {
-    const renderedCards = renderCard(element.title, element.imgUrl);
+    const renderedCards = renderCard(element.title, element.imgUrl, element.githubUrl, element.url);
     cards.append(renderedCards);
 });
 
 // -------------scroll animation----------------
 
 let elementsToShow = document.querySelectorAll('.anim-on-scroll');
+let section = document.querySelectorAll('.main-content');
 
-console.log(elementsToShow);
+console.log(elementsToShow, section);
 
 const loop = () => {
-    console.log('mau');
     [].forEach.call(elementsToShow, function (element) {
         if (isElementInViewport(element)) {
             element.classList.add('is-visible');
         } else {
             if (!element.classList.contains('anim-stop')) {
                 element.classList.remove('is-visible');
+            }
+        }
+    });
+    [].forEach.call(section, function (el) {
+        const elId = el.id;
+        const activeNavLink = document.querySelector('.navebar__link[href="#' + elId + '"]');
+        if (isElementPartlyViewport(el)) {
+            activeNavLink.classList.add('active-link');
+        } else {
+            if (!el.classList.contains('active-link')) {
+                activeNavLink.classList.remove('active-link');
             }
         }
     });
@@ -242,8 +258,15 @@ function isElementInViewport(el) {
     );
 }
 
+function isElementPartlyViewport(el) {
+    let rect = el.getBoundingClientRect();
+    return (
+        rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
 if (elementsToShow.length > 0) {
-    console.log('kras');
     window.addEventListener('scroll', () => loop());
 
     setTimeout(() => {
@@ -262,3 +285,10 @@ popupCloseBtns.forEach((el) => {
         togglePopupClass(popupElement);
     });
 });
+
+// const header = document.querySelector('.header');
+
+// const headerNavLinks = header.querySelectorAll('.navebar__link');
+// headerNavLinks.forEach((link) => {
+//     link.classList.add('current-link');
+// });
