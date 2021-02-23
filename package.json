@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "rimraf dist &&",
+  "description": "front-end developer portfolio",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/MilaSergeeva/portfolio/issues"
   },
-  "homepage": "https://github.com/MilaSergeeva/portfolio#readme",
+  "homepage": "https://milasergeeva.github.io/portfolio/",
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
@@ -35,6 +35,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "core-js": "^2.6.12"
+    "core-js": "^2.6.12",
+    "gh-pages": "^3.1.0"
   }
 }
