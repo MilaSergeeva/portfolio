@@ -205,7 +205,7 @@ if (elementsToShow.length > 0) {
 
     setTimeout(() => {
         loop();
-    }, 400);
+    }, 100);
 }
 
 //close popup
