@@ -169,6 +169,10 @@ section {
     background-position-y: 1.5rem;
 }
 
+.avatar:hover {
+    background-image: url(./images/avatar_mila2.png);
+}
+
 .introduction {
     display: flex;
     flex-direction: row;
