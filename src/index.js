@@ -92,12 +92,15 @@ const openPopupCard = function (event) {
     const popup = document.querySelector('.popup__card');
     const discription = popup.querySelector('.popup__discription-container');
     const technologies = popup.querySelector('.technologies');
+    const appLink = popup.querySelector('.popup__app-link');
 
     const cardImg = event.target.previousElementSibling;
     popupCardImg.src = cardImg.src;
     popupCardTitle.textContent = cardImg.alt;
 
     const indexOfCard = initialCards.findIndex((i) => i.title === cardImg.alt);
+
+    appLink.href = initialCards[indexOfCard].url;
 
     initialCards[indexOfCard].description.forEach((string) => {
         discription.insertAdjacentHTML('beforeEnd', `<p class="popup__discription">${string}</p>`);

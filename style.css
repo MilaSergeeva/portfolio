@@ -71,8 +71,9 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     color: #f4f4f4;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin: 0 0 0 3rem;
+    white-space: nowrap;
 }
 .navbar__menu-item {
     margin: 0;
@@ -131,16 +132,16 @@ section {
 .home-section__content {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     justify-content: space-around;
     align-items: center;
-    padding-top: 80px;
     min-width: 90%;
+    max-height: 1050px;
 }
 
 .home-title {
     text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1.5;
     background-color: #f4f4f4;
     display: inline-block;
@@ -158,8 +159,8 @@ section {
 .avatar {
     display: inline-block;
     background-image: url(./images/avatar_mila.png);
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     border-radius: 50%;
     z-index: 10;
     color: black;
@@ -182,7 +183,8 @@ section {
     overflow: hidden;
     align-items: center;
     z-index: 10;
-    margin-top: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 section h2 {
@@ -283,9 +285,11 @@ section h2 {
 .contact {
     display: inline;
     font-size: 0.8rem;
-    cursor: none;
+    cursor: default;
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    color: #4e4d4a;
 }
 
 .phoneEmail {
@@ -363,7 +367,7 @@ section h2 {
 }
 
 .popup__container {
-    width: 70%;
+    width: 80%;
     height: 80%;
     background: #ffffff;
     border-radius: 10px;
@@ -376,6 +380,18 @@ section h2 {
     max-width: 1080px;
     display: flex;
     flex-direction: column;
+}
+.popup__title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.popup__app-link {
+    text-decoration: none;
+    color: #4e4d4a;
 }
 
 .popup__img {
@@ -666,6 +682,23 @@ section h2 {
     overflow-x: hidden;
 }
 
+@media screen and (max-width: 1440px) {
+    .home-section__content {
+        min-height: 100vh;
+        justify-content: flex-start;
+        min-width: 90%;
+    }
+
+    .home-title {
+        font-size: 2.5rem;
+    }
+
+    .avatar {
+        height: 350px;
+        width: 350px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .header ul li a {
         font-size: 0.8rem;
@@ -688,9 +721,13 @@ section h2 {
         font-size: 0.7rem;
     }
 
-    .intrudaction {
+    .avatar {
+        height: 300px;
+        width: 300px;
+    }
+    .introduction {
         margin-top: 1rem;
-        width: 85%;
+        margin-bottom: 1rem;
     }
 
     .section__container {
@@ -793,6 +830,15 @@ section h2 {
 }
 
 @media screen and (max-width: 950px) {
+    .avatar {
+        height: 250px;
+        width: 250px;
+    }
+
+    .home-title {
+        font-size: 1.5rem;
+    }
+
     .cards {
         margin: 2rem 0;
         max-width: none;

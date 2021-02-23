@@ -18,7 +18,7 @@
                         <li class="navbar__menu-item"><a href="#home" class="navebar__link navbar__menu-home">home</a></li>
                         <!-- <li class="navbar__menu-item"><a href="#about" class="navebar__link navbar__menu-about">about</a></li> -->
                         <li class="navbar__menu-item"><a href="#projects" class="navebar__link navbar__menu-projects">projects</a></li>
-                        <li class="navbar__menu-item"><a href="#contact" class="navebar__link navbar__menu-contact">about&contact</a></li>
+                        <li class="navbar__menu-item"><a href="#contact" class="navebar__link navbar__menu-contact">about/contacts</a></li>
                     </ul>
                 </nav>
                 <button class="navbar__menu-button">
@@ -168,7 +168,7 @@
                     </div>
                     <div class='phoneEmail'>
                         <p class='contact'>tel: +47 464 70 083</p>
-                        <p class='contact'>e-mail: liudmila.sergeeva@hotmail.com</p>
+                        <a href="mailto:liudmila.sergeeva@hotmail.com" class='contact'><p>liudmila.sergeeva@hotmail.com</p></a>
                     </div>
                 </div>
             </section>
@@ -182,7 +182,13 @@
                     <img class="popup__img" src="#" alt="#"> 
                     <figcaption class="popup__caption"> 
                         <div class="popup__discription-container">
-                            <h3 class="popup__title"></h3> 
+                            <div class="popup__title-container">
+                                <h3 class="popup__title"></h3>
+                                <a href="#" target="_blank" class="popup__app-link">
+                                    <span class="card__app-visit">Visit app &rarr;</span>
+                                </a>
+                            </div>
+                            
                         </div>
                     </figcaption> 
                     <ul class='technologies'></ul>
