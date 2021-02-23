@@ -156,21 +156,22 @@ section {
     overflow: hidden;
 }
 
-.avatar {
+.avatar-smile {
     display: inline-block;
     background-image: url(./images/avatar_mila.png);
     height: 400px;
     width: 400px;
     border-radius: 50%;
     z-index: 10;
-    color: black;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
     background-position-y: 1.5rem;
+    opacity: 1;
+    transition: background-image 0.3s ease;
 }
 
-.avatar:hover {
+.avatar-smile:hover {
     background-image: url(./images/avatar_mila2.png);
 }
 
@@ -693,7 +694,7 @@ section h2 {
         font-size: 2.5rem;
     }
 
-    .avatar {
+    .avatar-smile {
         height: 350px;
         width: 350px;
     }
@@ -721,7 +722,7 @@ section h2 {
         font-size: 0.7rem;
     }
 
-    .avatar {
+    .avatar-smile {
         height: 300px;
         width: 300px;
     }
@@ -830,7 +831,7 @@ section h2 {
 }
 
 @media screen and (max-width: 950px) {
-    .avatar {
+    .avatar-smile {
         height: 250px;
         width: 250px;
     }
@@ -952,7 +953,7 @@ section h2 {
         margin-top: 1rem;
     }
 
-    .avatar {
+    .avatar-smile {
         width: 28.7vw;
         height: 28.7vw;
     }
