@@ -56,6 +56,7 @@ const initialCards = [
             restAPI,
             mongoDB,
             postmanIcon,
+            herokuIcon,
         ],
     },
     {
@@ -92,6 +93,7 @@ const initialCards = [
             restAPI,
             mongoDB,
             postmanIcon,
+            herokuIcon,
         ],
     },
     {
