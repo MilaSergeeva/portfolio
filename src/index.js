@@ -1,16 +1,17 @@
 import '../style.css';
 
-import diplomPjImg from '../images/diplom.png';
-import toDoImg from '../images/todoApp.png';
-import mestoReactImg from '../images/mestoReact.png';
-import mestoImg from '../images/mesto.png';
-import turbinaImg from '../images/turbina.png';
-import procastinateImg from '../images/procastinate.png';
-import travelRussiaImg from '../images/travel.png';
-import howToLearnImg from '../images/learn.png';
-import portfolioImg from '../images/portfolio.png';
+import postmanIconImg from '../images/postman.svg';
+// import diplomPjImg from '../images/diplom.png';
+// import toDoImg from '../images/todoApp.png';
+// import mestoReactImg from '../images/mestoReact.png';
+// import mestoImg from '../images/mesto.png';
+// import turbinaImg from '../images/turbina.png';
+// import procastinateImg from '../images/procastinate.png';
+// import travelRussiaImg from '../images/travel.png';
+// import howToLearnImg from '../images/learn.png';
+// import portfolioImg from '../images/portfolio.png';
 import diplom from '../images/diploma.png';
-// import cv from '../images/cvBig.png';
+import { initialCards } from '../config.js';
 
 // Картиночки
 const popups = document.querySelectorAll('.popup');
@@ -29,88 +30,6 @@ const navMenuItem = document.querySelectorAll('.navbar__menu-item');
 const docPdf = document.querySelectorAll('.docs-pdf');
 
 const cards = document.querySelector('.cards');
-
-const initialCards = [
-    {
-        title: 'The Degree Final Project',
-        description:
-            "'News Explorer' it is a full stack React application to allow users find and save news.  To find news user need to enter keyword. It is possiple to sign-up and save news in users profile. ",
-        githubUrl: 'https://github.com/MilaSergeeva/news-explorer-frontend',
-        url: 'https://milasergeeva.github.io/news-explorer-frontend/',
-        imgUrl: diplomPjImg,
-        id: 1,
-    },
-    {
-        title: 'Todo app',
-        description:
-            'A Vanilla JavaScript Todo App. You can use the input field to enter the title of a new task and add that task to the list by either clicking the plus icon or hitting return. It is possible to sort tasks as completed or uncompleted. Orange your tasks (drag and drob). Data saved in Local Storage',
-        githubUrl: 'https://github.com/MilaSergeeva/to_do_vanillaJS',
-        url: ' https://milasergeeva.github.io/to_do_vanillaJS/',
-        imgUrl: toDoImg,
-        id: 2,
-    },
-    {
-        title: 'Mesto-React',
-        description:
-            "'Mesto-React'. It is a full-stack single page application on React. It allows users to upload, view, like and delete photos, add . with following features - identification, authentication and authorization.",
-        githubUrl: 'https://github.com/MilaSergeeva/react-mesto-api-full',
-        url: 'https://mesto-react-front.herokuapp.com',
-        imgUrl: mestoReactImg,
-        id: 3,
-    },
-    {
-        title: 'Mesto',
-        description:
-            "'Mesto' It is a single page application. OOP (class-based object-oriented js) ",
-        githubUrl: 'https://github.com/MilaSergeeva/mesto',
-        url: 'https://milasergeeva.github.io/mesto/',
-        imgUrl: mestoImg,
-        id: 4,
-    },
-
-    {
-        title: 'Turbina',
-        description:
-            "'Turbina' is a voluntary promotion project for the children's bookshop Marshak. It's a React web application with a music player and a feedback form. ",
-        githubUrl: 'https://github.com/MilaSergeeva/turbina-dd',
-        url: 'https://milasergeeva.github.io/turbina-dd/',
-        imgUrl: turbinaImg,
-        id: 5,
-    },
-    {
-        title: 'Procastinate',
-        description: 'It is a study project. Simple JS generator of ideas for procrastination.',
-        githubUrl: 'https://github.com/MilaSergeeva/procastinate',
-        url: 'https://milasergeeva.github.io/procastinate/',
-        imgUrl: procastinateImg,
-        id: 6,
-    },
-    {
-        title: "Landing 'Travel through Russia'",
-        description:
-            'it is a single page web site with useful information about how to travel through Russia.  HTML, CSS, adaptive layout',
-        githubUrl: 'https://github.com/MilaSergeeva/russian-travel',
-        url: 'https://milasergeeva.github.io/russian-travel/',
-        imgUrl: travelRussiaImg,
-        id: 7,
-    },
-    {
-        title: "Landing 'How to learn'",
-        description: 'It is a single page app with tips on how to learn. HTML, CSS adaptive layout',
-        githubUrl: 'https://github.com/MilaSergeeva/how-to-learn',
-        url: 'https://mkvaratshelia.github.io/learn/',
-        imgUrl: howToLearnImg,
-        id: 8,
-    },
-    {
-        title: 'My Portfolio',
-        description: 'It is a single page app to know me better',
-        githubUrl: 'https://github.com/MilaSergeeva/portfolio',
-        url: 'https://milasergeeva.github.io/portfolio/',
-        imgUrl: portfolioImg,
-        id: 9,
-    },
-];
 
 docPdf[0].addEventListener('click', openPopupPdf);
 
@@ -132,6 +51,7 @@ const closePopupByEsc = function (event) {
     if (event.keyCode === 27) {
         const popupOpened = document.querySelector('.popup_opened');
         if (popupOpened) {
+            deleteDomNodeBeforeClose();
             togglePopupClass(popupOpened);
         }
     }
@@ -141,6 +61,8 @@ const closePopupByEsc = function (event) {
 const togglePopupClass = function (element) {
     const popupElement = element.closest('.popup');
 
+    // const popupDiscription = popupElement.querySelectorAll('.popup__discription');
+    // popupDiscription.forEach((p) => p.remove());
     popupElement.classList.toggle('popup_opened');
 
     if (popupElement.classList.contains('popup_opened')) {
@@ -150,11 +72,19 @@ const togglePopupClass = function (element) {
     }
 };
 
+function deleteDomNodeBeforeClose() {
+    const popupDiscription = document.querySelectorAll('.popup__discription');
+    const popupIcons = document.querySelectorAll('.icon__element');
+    popupDiscription.forEach((p) => p.remove());
+    popupIcons.forEach((i) => i.remove());
+}
+
 // overlay close func
 const closePopupOverlay = function (event) {
     const popupElement = event.target;
 
     if (popupElement.classList.contains('popup')) {
+        deleteDomNodeBeforeClose();
         togglePopupClass(popupElement);
     }
 };
@@ -168,13 +98,30 @@ function openPopupPdf(event) {
 
 //open card popup func
 const openPopupCard = function (event) {
+    const popup = document.querySelector('.popup__card');
+    const discription = popup.querySelector('.popup__discription-container');
+    const technologies = popup.querySelector('.technologies');
+    console.log('discription', discription);
+
     const cardImg = event.target.previousElementSibling;
+    console.log('cardImg', cardImg);
     popupCardImg.src = cardImg.src;
     popupCardTitle.textContent = cardImg.alt;
 
     const indexOfCard = initialCards.findIndex((i) => i.title === cardImg.alt);
 
-    popupCardDiscription.textContent = initialCards[indexOfCard].description;
+    initialCards[indexOfCard].description.forEach((string) => {
+        discription.insertAdjacentHTML('beforeEnd', `<p class="popup__discription">${string}</p>`);
+    });
+
+    initialCards[indexOfCard].tech.forEach((icon) => {
+        technologies.insertAdjacentHTML('beforeEnd', icon);
+        console.log(icon);
+    });
+
+    if (document.querySelector('.postmanIcon')) {
+        document.querySelector('.postmanIcon').src = postmanIconImg;
+    }
 
     togglePopupClass(popupCardView);
 };
@@ -268,7 +215,7 @@ popups.forEach((popup) => popup.addEventListener('keydown', closePopupByEsc));
 popupCloseBtns.forEach((el) => {
     el.addEventListener('click', (event) => {
         const popupElement = event.target.closest('.popup');
-
+        deleteDomNodeBeforeClose();
         togglePopupClass(popupElement);
     });
 });
