@@ -1,15 +1,7 @@
 import '../style.css';
 
 import postmanIconImg from '../images/postman.svg';
-// import diplomPjImg from '../images/diplom.png';
-// import toDoImg from '../images/todoApp.png';
-// import mestoReactImg from '../images/mestoReact.png';
-// import mestoImg from '../images/mesto.png';
-// import turbinaImg from '../images/turbina.png';
-// import procastinateImg from '../images/procastinate.png';
-// import travelRussiaImg from '../images/travel.png';
-// import howToLearnImg from '../images/learn.png';
-// import portfolioImg from '../images/portfolio.png';
+import herokuIconImg from '../images/heroku.svg';
 import diplom from '../images/diploma.png';
 import { initialCards } from '../config.js';
 
@@ -92,7 +84,6 @@ const closePopupOverlay = function (event) {
 function openPopupPdf(event) {
     popupDocsImg.src = diplom;
 
-    console.log(popupDocsImg, event.target);
     togglePopupClass(popupDocs);
 }
 
@@ -101,10 +92,8 @@ const openPopupCard = function (event) {
     const popup = document.querySelector('.popup__card');
     const discription = popup.querySelector('.popup__discription-container');
     const technologies = popup.querySelector('.technologies');
-    console.log('discription', discription);
 
     const cardImg = event.target.previousElementSibling;
-    console.log('cardImg', cardImg);
     popupCardImg.src = cardImg.src;
     popupCardTitle.textContent = cardImg.alt;
 
@@ -116,11 +105,14 @@ const openPopupCard = function (event) {
 
     initialCards[indexOfCard].tech.forEach((icon) => {
         technologies.insertAdjacentHTML('beforeEnd', icon);
-        console.log(icon);
     });
 
     if (document.querySelector('.postmanIcon')) {
         document.querySelector('.postmanIcon').src = postmanIconImg;
+    }
+
+    if (document.querySelector('.herokuIcon')) {
+        document.querySelector('.herokuIcon').src = herokuIconImg;
     }
 
     togglePopupClass(popupCardView);

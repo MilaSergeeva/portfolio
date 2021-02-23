@@ -412,12 +412,12 @@ section h2 {
     text-align: center;
 }
 
-.postmanIcon {
+.imgIcon {
     height: 32px;
     width: 32px;
 }
 
-.icon__name-postman {
+.icon__name-imgIcon {
     margin: 0;
 }
 
@@ -767,7 +767,7 @@ section h2 {
         grid-row-gap: 10px;
     }
 
-    .postmanIcon {
+    .imgIcon {
         height: 26px;
         width: 26px;
     }
@@ -855,12 +855,12 @@ section h2 {
         font-size: 0.7rem;
     }
 
-    .postmanIcon {
+    .imgIcon {
         height: 19px;
         width: 19px;
     }
 
-    .icon__name-postman {
+    .icon__name-imgIcon {
         margin-top: 1px;
     }
 
