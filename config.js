@@ -124,7 +124,8 @@ const initialCards = [
     {
         title: 'Procastinate',
         description: [
-            'It is a study project. Simple JS generator of ideas for procrastination. Press the button and get a new idea!',
+            'It is a study project. Simple JS generator of ideas for procrastination.',
+            'Press the button and get a new idea!',
         ],
         githubUrl: 'https://github.com/MilaSergeeva/procastinate',
         url: 'https://milasergeeva.github.io/procastinate/',
