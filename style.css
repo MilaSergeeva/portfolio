@@ -1127,7 +1127,7 @@ section h2 {
 /* ------------------animation-------------- */
 
 .anim-start {
-    transition: transform 0.5s 0.1s ease, opacity 0.8s 0.4s ease;
+    transition: transform 0.5s 0.1s ease, opacity 0.8s 0.2s ease;
     transform: translate(0px, 120%);
     opacity: 0;
 }

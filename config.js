@@ -37,7 +37,7 @@ const initialCards = [
         title: 'The Degree Final Project',
         description: [
             "'News Explorer' it is a full stack React application to allow users find and save news.",
-            'To find news user need to enter keyword.  It is possiple to sign-up and save news in users profile.',
+            'To find news user need to enter keyword.  It is possible to sign-up and save news in users profile.',
             'Identification, authentication and authorization are realized in the appp',
             'Client-side and user-side validation, joi/celebrate modules, jwt-token',
             'Data saves in Local Storage',
