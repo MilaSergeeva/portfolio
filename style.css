@@ -489,6 +489,10 @@ section h2 {
     grid-row-gap: 10px;
 }
 
+.popup__content-docs{
+    overflow: scroll;
+}
+
 .popup__title {
     font-size: 1.3rem;
     line-height: 15px;
@@ -518,16 +522,25 @@ section h2 {
     text-decoration: none;
     color: #fff;
     cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.popup__app-link:hover {
+    transform: translateX(-15px);
+    transition: all 0.3s ease;
 }
 
 .card__github-link:hover,
 .card__app-link:hover {
     color: rgba(255, 255, 255, 0.788);
+    transform: scale(1.2);
 }
 
 .card__github-logo {
     font-size: 1.5rem;
 }
+
+
 
 .cards {
     display: grid;
@@ -679,7 +692,7 @@ section h2 {
 }
 
 .popup__docs {
-    overflow-y: scroll;
+    width: 100%;
     overflow-x: hidden;
 }
 
