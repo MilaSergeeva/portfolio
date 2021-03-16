@@ -686,6 +686,12 @@ section h2 {
     cursor: pointer;
 }
 
+.social-media__link:hover{
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+} 
+
+
 .social-media__icon {
     margin: 2rem 1rem;
     color: #4e4d4a;
