@@ -2,6 +2,7 @@ import '../style.css';
 
 import postmanIconImg from '../images/postman.svg';
 import herokuIconImg from '../images/heroku.svg';
+import typeScriptIconImg from '../images/ts.svg';
 import diplom from '../images/diploma.png';
 import { initialCards } from '../config.js';
 
@@ -116,6 +117,10 @@ const openPopupCard = function (event) {
 
     if (document.querySelector('.herokuIcon')) {
         document.querySelector('.herokuIcon').src = herokuIconImg;
+    }
+
+    if (document.querySelector('.typeScriptIcon')) {
+        document.querySelector('.typeScriptIcon').src = typeScriptIconImg;
     }
 
     togglePopupClass(popupCardView);

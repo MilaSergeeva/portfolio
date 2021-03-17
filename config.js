@@ -7,6 +7,7 @@ import procastinateImg from './images/procastinate.png';
 import travelRussiaImg from './images/travel.png';
 import howToLearnImg from './images/learn.png';
 import portfolioImg from './images/portfolio.png';
+import todoTS from './images/todo_TS.png';
 
 const jsIcon =
     '<li class="icon__element"><i class="icon fab fa-js"></i><p class="icon__name">JavaScript ES6</p></li>';
@@ -28,11 +29,26 @@ const restAPI =
 const webpackIcon =
     '<li class="icon__element"><i class="icon fas fa-box-open"></i><p class="icon__name">WebPack</p></li>';
 const postmanIcon = `<li class="icon__element"><img srs="#" alt='postmanIcon' class='postmanIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Postman</p></li>`;
+
 const herokuIcon = `<li class="icon__element"><img srs="#" alt='herokuIcon' class='herokuIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Heroku PaaS</p></li>`;
+
+const typeScriptIcon = `<li class="icon__element"><img srs="#" alt='typeScriptIcon' class='typeScriptIcon imgIcon'> <p class="icon__name icon__name-imgIcon">TypeScript</p></li>`;
 
 // document.querySelector('.postmanIcon').src = postmanIconImg;
 
 const initialCards = [
+    {
+        title: 'React TypeScript Todo App',
+        description: [
+            "'React TypeScript Todo Ap' it is a small study project on React and TypeScript",
+            'For this project was used style set from materialize.com',
+        ],
+        githubUrl: 'https://github.com/MilaSergeeva/ts_react_todo',
+        url: 'https://milasergeeva.github.io/ts_react_todo/',
+        imgUrl: todoTS,
+        id: 0,
+        tech: [typeScriptIcon, reactIcon, cssIcon],
+    },
     {
         title: 'The Degree Final Project',
         description: [
