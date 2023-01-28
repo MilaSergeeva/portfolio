@@ -3,6 +3,8 @@ import '../style.css';
 import postmanIconImg from '../images/postman.svg';
 import herokuIconImg from '../images/heroku.svg';
 import typeScriptIconImg from '../images/ts.svg';
+import sassImg from '../images/sass-1.svg';
+import rubyOnRailsImg from '../images/RubyOnRails.svg';
 import diplom from '../images/diploma.png';
 import { initialCards } from '../config.js';
 
@@ -121,6 +123,14 @@ const openPopupCard = function (event) {
 
     if (document.querySelector('.typeScriptIcon')) {
         document.querySelector('.typeScriptIcon').src = typeScriptIconImg;
+    }
+
+    if (document.querySelector('.sassIcon')) {
+        document.querySelector('.sassIcon').src = sassImg;
+    }
+
+    if (document.querySelector('.rubyOnRailsIcon')) {
+        document.querySelector('.rubyOnRailsIcon').src = rubyOnRailsImg;
     }
 
     togglePopupClass(popupCardView);

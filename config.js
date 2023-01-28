@@ -8,6 +8,7 @@ import travelRussiaImg from './images/travel.png';
 import howToLearnImg from './images/learn.png';
 import portfolioImg from './images/portfolio.png';
 import todoTS from './images/todo_TS.png';
+import menoring from './images/mentoring.png';
 
 const jsIcon =
     '<li class="icon__element"><i class="icon fab fa-js"></i><p class="icon__name">JavaScript ES6</p></li>';
@@ -28,15 +29,45 @@ const restAPI =
     '<li class="icon__element"><i class="icon far fa-comments"></i><p class="icon__name">Rest API</p></li>';
 const webpackIcon =
     '<li class="icon__element"><i class="icon fas fa-box-open"></i><p class="icon__name">WebPack</p></li>';
-const postmanIcon = `<li class="icon__element"><img srs="#" alt='postmanIcon' class='postmanIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Postman</p></li>`;
+const postmanIcon = `<li class="icon__element"><img src="#" alt='postmanIcon' class='postmanIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Postman</p></li>`;
 
-const herokuIcon = `<li class="icon__element"><img srs="#" alt='herokuIcon' class='herokuIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Heroku PaaS</p></li>`;
+const herokuIcon = `<li class="icon__element"><img src="#" alt='herokuIcon' class='herokuIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Heroku PaaS</p></li>`;
 
-const typeScriptIcon = `<li class="icon__element"><img srs="#" alt='typeScriptIcon' class='typeScriptIcon imgIcon'> <p class="icon__name icon__name-imgIcon">TypeScript</p></li>`;
+const typeScriptIcon = `<li class="icon__element"><img src="#" alt='typeScriptIcon' class='typeScriptIcon imgIcon'> <p class="icon__name icon__name-imgIcon">TypeScript</p></li>`;
+
+const sassIcon = `<li class="icon__element"><img src="#" alt='sassIcon' class='sassIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Sass</p></li>`;
+
+const rubyOnRailsIcon = `<li class="icon__element"><img src="#" alt='rubyOnRailsIcon' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Ruby on Rails</p></li>`;
 
 // document.querySelector('.postmanIcon').src = postmanIconImg;
 
 const initialCards = [
+    {
+        title: 'Mentorship platform',
+        description: [
+            "'Mentorship platform' - application was built with Ruby/Ruby on Rails, Sass",
+            'The application lets users communicate (it is a mentor/mentee workplace), set meetings, set goals, have a chat, make notes, forum, show video content. It has front-end and back office',
+            'Code access can be provided upon request',
+        ],
+        githubUrl: '#',
+        url: 'https://www.youtube.com/embed/yf44K2I4CIo',
+        imgUrl: menoring,
+        id: 0,
+        tech: [rubyOnRailsIcon, sassIcon],
+    },
+    {
+        title: 'Mentorship platform',
+        description: [
+            "'Mentorship platform' - application was built with Ruby/Ruby on Rails, Sass",
+            'The application lets users communicate (it is a mentor/mentee workplace), set meetings, set goals, have a chat, make notes, forum, show video content. It has front-end and back office',
+            'Code access can be provided upon request',
+        ],
+        githubUrl: '#',
+        url: 'https://www.youtube.com/embed/yf44K2I4CIo',
+        imgUrl: menoring,
+        id: 0,
+        tech: [rubyOnRailsIcon, sassIcon],
+    },
     {
         title: 'React TypeScript Todo App',
         description: [
@@ -46,7 +77,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/ts_react_todo',
         url: 'https://milasergeeva.github.io/ts_react_todo/',
         imgUrl: todoTS,
-        id: 0,
+        id: 1,
         tech: [typeScriptIcon, reactIcon, cssIcon],
     },
     {
@@ -61,7 +92,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/news-explorer-frontend',
         url: 'https://milasergeeva.github.io/news-explorer-frontend/',
         imgUrl: diplomPjImg,
-        id: 1,
+        id: 2,
         tech: [
             jsIcon,
             reactIcon,
@@ -86,7 +117,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/to_do_vanillaJS',
         url: ' https://milasergeeva.github.io/to_do_vanillaJS/',
         imgUrl: toDoImg,
-        id: 2,
+        id: 3,
         tech: [jsIcon, htmdIcon, cssIcon, responsiveLeyout],
     },
     {
@@ -98,7 +129,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/react-mesto-api-full',
         url: 'https://mesto-react-front.herokuapp.com',
         imgUrl: mestoReactImg,
-        id: 3,
+        id: 4,
         tech: [
             jsIcon,
             reactIcon,
@@ -116,12 +147,12 @@ const initialCards = [
         title: 'Mesto',
         description: [
             "'Mesto' It is a single page application. User can share their pictures with caption.",
-            'Functionality: edit profile infornation, add new cards, delete and like cards, view card.',
+            'Functionality: edit profile information, add new cards, delete and like cards, view card.',
         ],
         githubUrl: 'https://github.com/MilaSergeeva/mesto',
         url: 'https://milasergeeva.github.io/mesto/',
         imgUrl: mestoImg,
-        id: 4,
+        id: 5,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout, webpackIcon],
     },
 
@@ -136,7 +167,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/turbina-dd',
         url: 'https://milasergeeva.github.io/turbina-dd/',
         imgUrl: turbinaImg,
-        id: 5,
+        id: 6,
         tech: [jsIcon, reactIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -148,7 +179,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/procastinate',
         url: 'https://milasergeeva.github.io/procastinate/',
         imgUrl: procastinateImg,
-        id: 6,
+        id: 7,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -161,7 +192,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/russian-travel',
         url: 'https://milasergeeva.github.io/russian-travel/',
         imgUrl: travelRussiaImg,
-        id: 7,
+        id: 8,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -174,7 +205,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/how-to-learn',
         url: 'https://mkvaratshelia.github.io/learn/',
         imgUrl: howToLearnImg,
-        id: 8,
+        id: 9,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -183,7 +214,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/portfolio',
         url: 'https://milasergeeva.github.io/portfolio/',
         imgUrl: portfolioImg,
-        id: 9,
+        id: 10,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout, webpackIcon],
     },
 ];
