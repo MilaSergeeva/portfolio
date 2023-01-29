@@ -39,21 +39,30 @@ const sassIcon = `<li class="icon__element"><img src="#" alt='sassIcon' class='s
 
 const rubyOnRailsIcon = `<li class="icon__element"><img src="#" alt='rubyOnRailsIcon' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Ruby on Rails</p></li>`;
 
+const cypress = `<li class="icon__element"><img src="#" alt='cypress' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Cypress</p></li>`;
+
+const jest = `<li class="icon__element"><img src="#" alt='jest' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Jest</p></li>`;
+
+const redux = `<li class="icon__element"><img src="#" alt='redux' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Redux</p></li>`;
+
+const typescript = `<li class="icon__element"><img src="#" alt='typescript' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Typescript</p></li>`;
+
+const websocket = `<li class="icon__element"><img src="#" alt='websocket' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon"Websocket</p></li>`;
+
 // document.querySelector('.postmanIcon').src = postmanIconImg;
 
 const initialCards = [
     {
-        title: 'Mentorship platform',
+        title: 'Space burger',
         description: [
-            "'Mentorship platform' - application was built with Ruby/Ruby on Rails, Sass",
-            'The application lets users communicate (it is a mentor/mentee workplace), set meetings, set goals, have a chat, make notes, forum, show video content. It has front-end and back office',
-            'Code access can be provided upon request',
+            "'Space burger' - application was built with React, Redux, Tyscript, Test Coverage - Jest annd Cypress.",
+            'The application lets users to create their own burger from menu ingridients, and make an order. It is possible to sign in, check history of user`s orders, see status ready/inprocces of all orders, etc',
         ],
-        githubUrl: '#',
-        url: 'https://www.youtube.com/embed/yf44K2I4CIo',
-        imgUrl: menoring,
+        githubUrl: 'https://github.com/MilaSergeeva/react-burger',
+        url: 'https://MilaSergeeva.github.io/react-burger',
+        imgUrl: burger,
         id: 0,
-        tech: [rubyOnRailsIcon, sassIcon],
+        tech: [cypress, jest, redux, typescript, websocket],
     },
     {
         title: 'Mentorship platform',
@@ -65,7 +74,7 @@ const initialCards = [
         githubUrl: '#',
         url: 'https://www.youtube.com/embed/yf44K2I4CIo',
         imgUrl: menoring,
-        id: 0,
+        id: 1,
         tech: [rubyOnRailsIcon, sassIcon],
     },
     {
@@ -77,7 +86,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/ts_react_todo',
         url: 'https://milasergeeva.github.io/ts_react_todo/',
         imgUrl: todoTS,
-        id: 1,
+        id: 2,
         tech: [typeScriptIcon, reactIcon, cssIcon],
     },
     {
@@ -92,7 +101,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/news-explorer-frontend',
         url: 'https://milasergeeva.github.io/news-explorer-frontend/',
         imgUrl: diplomPjImg,
-        id: 2,
+        id: 3,
         tech: [
             jsIcon,
             reactIcon,
@@ -117,7 +126,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/to_do_vanillaJS',
         url: ' https://milasergeeva.github.io/to_do_vanillaJS/',
         imgUrl: toDoImg,
-        id: 3,
+        id: 4,
         tech: [jsIcon, htmdIcon, cssIcon, responsiveLeyout],
     },
     {
@@ -129,7 +138,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/react-mesto-api-full',
         url: 'https://mesto-react-front.herokuapp.com',
         imgUrl: mestoReactImg,
-        id: 4,
+        id: 5,
         tech: [
             jsIcon,
             reactIcon,
@@ -152,7 +161,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/mesto',
         url: 'https://milasergeeva.github.io/mesto/',
         imgUrl: mestoImg,
-        id: 5,
+        id: 6,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout, webpackIcon],
     },
 
@@ -167,7 +176,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/turbina-dd',
         url: 'https://milasergeeva.github.io/turbina-dd/',
         imgUrl: turbinaImg,
-        id: 6,
+        id: 7,
         tech: [jsIcon, reactIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -179,7 +188,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/procastinate',
         url: 'https://milasergeeva.github.io/procastinate/',
         imgUrl: procastinateImg,
-        id: 7,
+        id: 8,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -192,7 +201,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/russian-travel',
         url: 'https://milasergeeva.github.io/russian-travel/',
         imgUrl: travelRussiaImg,
-        id: 8,
+        id: 9,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -205,7 +214,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/how-to-learn',
         url: 'https://mkvaratshelia.github.io/learn/',
         imgUrl: howToLearnImg,
-        id: 9,
+        id: 10,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout],
     },
     {
@@ -214,7 +223,7 @@ const initialCards = [
         githubUrl: 'https://github.com/MilaSergeeva/portfolio',
         url: 'https://milasergeeva.github.io/portfolio/',
         imgUrl: portfolioImg,
-        id: 10,
+        id: 11,
         tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout, webpackIcon],
     },
 ];
