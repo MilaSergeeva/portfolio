@@ -9,6 +9,7 @@ import howToLearnImg from './images/learn.png';
 import portfolioImg from './images/portfolio.png';
 import todoTS from './images/todo_TS.png';
 import menoring from './images/mentoring.png';
+import burger from './images/burger.png';
 
 const jsIcon =
     '<li class="icon__element"><i class="icon fab fa-js"></i><p class="icon__name">JavaScript ES6</p></li>';
@@ -39,15 +40,15 @@ const sassIcon = `<li class="icon__element"><img src="#" alt='sassIcon' class='s
 
 const rubyOnRailsIcon = `<li class="icon__element"><img src="#" alt='rubyOnRailsIcon' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Ruby on Rails</p></li>`;
 
-const cypress = `<li class="icon__element"><img src="#" alt='cypress' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Cypress</p></li>`;
+const cypress = `<li class="icon__element"><img src="#" alt='cypress' class='cypressIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Cypress</p></li>`;
 
-const jest = `<li class="icon__element"><img src="#" alt='jest' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Jest</p></li>`;
+const jest = `<li class="icon__element"><img src="#" alt='jest' class='jestIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Jest</p></li>`;
 
-const redux = `<li class="icon__element"><img src="#" alt='redux' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Redux</p></li>`;
+const redux = `<li class="icon__element"><img src="#" alt='redux' class='reduxIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Redux</p></li>`;
 
-const typescript = `<li class="icon__element"><img src="#" alt='typescript' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Typescript</p></li>`;
+const typescript = `<li class="icon__element"><img src="#" alt='typescript' class='typescriptIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Typescript</p></li>`;
 
-const websocket = `<li class="icon__element"><img src="#" alt='websocket' class='rubyOnRailsIcon imgIcon'> <p class="icon__name icon__name-imgIcon"Websocket</p></li>`;
+const websocket = `<li class="icon__element"><img src="#" alt='websocket' class='websocketIcon imgIcon'> <p class="icon__name icon__name-imgIcon">Websocket</p></li>`;
 
 // document.querySelector('.postmanIcon').src = postmanIconImg;
 
@@ -55,7 +56,7 @@ const initialCards = [
     {
         title: 'Space burger',
         description: [
-            "'Space burger' - application was built with React, Redux, Tyscript, Test Coverage - Jest annd Cypress.",
+            "'Space burger' - application was built with React, Redux, Typescript, Test Coverage - Jest annd Cypress.",
             'The application lets users to create their own burger from menu ingridients, and make an order. It is possible to sign in, check history of user`s orders, see status ready/inprocces of all orders, etc',
         ],
         githubUrl: 'https://github.com/MilaSergeeva/react-burger',

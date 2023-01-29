@@ -406,6 +406,8 @@ section h2 {
     grid-row-end: 3;
 }
 
+
+
 .technologies {
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
@@ -1159,4 +1161,9 @@ section h2 {
 .is-visible {
     transform: translate(0px, 0);
     opacity: 1;
+}
+
+
+.reduxSkillIcon, .websocketSkillIcon, .typescriptSkillIcon, .cypressSkillIcon, .jestSkillIcon {
+    max-width: 42px;
 }

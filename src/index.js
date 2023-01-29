@@ -6,6 +6,11 @@ import typeScriptIconImg from '../images/ts.svg';
 import sassImg from '../images/sass-1.svg';
 import rubyOnRailsImg from '../images/RubyOnRails.svg';
 import diplom from '../images/diploma.png';
+import cypressImg from '../images/cypress.svg';
+import websocketImg from '../images/websocket.svg';
+import typescriptImg from '../images/typescript.svg';
+import reduxImg from '../images/redux.svg';
+import jestImg from '../images/jest.svg';
 import { initialCards } from '../config.js';
 
 // Картиночки
@@ -133,6 +138,26 @@ const openPopupCard = function (event) {
         document.querySelector('.rubyOnRailsIcon').src = rubyOnRailsImg;
     }
 
+    if (document.querySelector('.cypressIcon')) {
+        document.querySelector('.cypressIcon').src = cypressImg;
+    }
+
+    if (document.querySelector('.websocketIcon')) {
+        document.querySelector('.websocketIcon').src = websocketImg;
+    }
+
+    if (document.querySelector('.typescriptIcon')) {
+        document.querySelector('.typescriptIcon').src = typescriptImg;
+    }
+
+    if (document.querySelector('.reduxIcon')) {
+        document.querySelector('.reduxIcon').src = reduxImg;
+    }
+
+    if (document.querySelector('.jestIcon')) {
+        document.querySelector('.jestIcon').src = jestImg;
+    }
+
     togglePopupClass(popupCardView);
 };
 
@@ -162,6 +187,29 @@ initialCards.forEach((element) => {
     const renderedCards = renderCard(element.title, element.imgUrl, element.githubUrl, element.url);
     cards.append(renderedCards);
 });
+
+//
+
+if (document.querySelector('.cypressSkillIcon')) {
+    document.querySelector('.cypressSkillIcon').src = cypressImg;
+}
+
+if (document.querySelector('.websocketSkillIcon')) {
+    document.querySelector('.websocketSkillIcon').src = websocketImg;
+}
+
+if (document.querySelector('.typescriptSkillIcon')) {
+    document.querySelector('.typescriptSkillIcon').src = typescriptImg;
+}
+
+if (document.querySelector('.reduxSkillIcon')) {
+    document.querySelector('.reduxSkillIcon').src = reduxImg;
+    console.log('kra');
+}
+
+if (document.querySelector('.jestSkillIcon')) {
+    document.querySelector('.jestSkillIcon').src = jestImg;
+}
 
 // -------------scroll animation----------------
 
