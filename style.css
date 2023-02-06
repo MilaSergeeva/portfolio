@@ -525,7 +525,8 @@ section h2 {
 }
 
 .popup__content-docs{
-    overflow: scroll;
+    overflow-y: scroll;
+    display: block !important;
 }
 
 .popup__title {
@@ -735,9 +736,15 @@ section h2 {
 }
 
 .popup__docs {
-    /* width: 100%; */
-    overflow-x: hidden;
+    width: 90%;
+    /* overflow-x: hidden; */
+    /* display: block !important; */
 }
+
+.popup__doc {
+    width: 100%;
+}
+
 
 @media screen and (max-width: 1440px) {
     .home-section__content {
@@ -934,19 +941,24 @@ section h2 {
         padding: 5px 0 0;
     }
 
+    .popup__container{
+        height: 95%;
+    }
     .popup__content {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 35% minmax(25%, 45%) minmax(15%, 45%);
+        grid-template-rows:  50% ;
         grid-column-gap: 0;
         grid-row-gap: 0;
+        overflow-y: scroll;
     }
 
     .popup__img {
         grid-row-start: 1;
         grid-row-end: 2;
         object-fit: cover;
-        min-height: 150px;
+        min-height: 400px;
+        max-height: 50%;
     }
 
     .popup__caption {
@@ -1064,7 +1076,7 @@ section h2 {
     }
 
     .popup__container {
-        height: 80vh;
+        height: 95vh;
         width: 100vw;
         padding: 5vw;
     }
