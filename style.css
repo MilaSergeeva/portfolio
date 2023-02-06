@@ -286,7 +286,7 @@ section h2 {
     line-height: 2;
     font-size: 1.2rem;
     text-align: justify;
-    margin: 0 0 1rem;
+    margin: 0 0 2rem;
 }
 
 .contact {
@@ -374,7 +374,7 @@ section h2 {
 }
 
 .popup__container {
-    width: 80%;
+    width: 90%;
     height: 80%;
     background: #ffffff;
     border-radius: 10px;
@@ -384,7 +384,7 @@ section h2 {
     box-sizing: border-box;
     object-fit: contain;
     max-height: 1080px;
-    max-width: 1080px;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
 }
@@ -479,6 +479,26 @@ section h2 {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.popup__app-link .card__app-visit {
+    color: rgb(8, 114, 116);
+    animation: pulse 3s infinite;
+}
+
+
+ 
+ @keyframes pulse {
+    0% {
+      color:rgb(9, 161, 163);
+    }
+    50%{
+      opacity: 0;
+    }
+    100% {
+      color: rgb(9, 161, 163);
+    }
+ }
+
+
 .popup_opened {
     opacity: 1;
     visibility: visible;
@@ -488,7 +508,7 @@ section h2 {
 
 .popup__content {
     display: grid;
-    grid-template-columns: 30% calc(70% - 10px);
+    grid-template-columns: 45% calc(55% - 10px);
     grid-template-rows: 60% calc(40% - 10px);
     margin: 0;
     height: 100%;
@@ -670,10 +690,12 @@ section h2 {
 
 .docs-pdf__title {
     padding: 0 0 1.5rem;
-    color: #4e4d4a;
+    color: #2b2a28;
     font-size: 1.3rem;
     font-weight: 400;
     min-height: 56px;
+    mix-blend-mode: difference;
+    filter:invert(100%);
 }
 
 .social-media {
@@ -706,7 +728,7 @@ section h2 {
 }
 
 .popup__docs {
-    width: 100%;
+    /* width: 100%; */
     overflow-x: hidden;
 }
 
