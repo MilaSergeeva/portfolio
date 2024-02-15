@@ -32,6 +32,7 @@ const docPdf = document.querySelectorAll('.docs-pdf');
 const cards = document.querySelector('.cards');
 
 docPdf[0].addEventListener('click', openPopupPdf);
+docPdf[1].addEventListener('click', openPopupPdf);
 
 navButton.addEventListener('click', toggleMenu);
 
@@ -284,3 +285,31 @@ popupCloseBtns.forEach((el) => {
 // headerNavLinks.forEach((link) => {
 //     link.classList.add('current-link');
 // });
+
+//Slider
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+    showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName('mySlides');
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+    slides[slideIndex - 1].style.display = 'block';
+}

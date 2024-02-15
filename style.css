@@ -161,8 +161,8 @@ section {
     display: inline-block;
     background: #fff;
     background-image: url(./images/avatar_mila.png);
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
     z-index: 10;
     background-size: contain;
@@ -947,7 +947,7 @@ section h2 {
     .popup__content {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows:  50% ;
+        grid-template-rows:  none ;
         grid-column-gap: 0;
         grid-row-gap: 0;
         overflow-y: scroll;
@@ -1213,4 +1213,36 @@ section h2 {
 
 .reduxSkillIcon, .websocketSkillIcon, .typescriptSkillIcon, .cypressSkillIcon, .jestSkillIcon {
     max-width: 42px;
+}
+
+/* slider  */
+
+/* Default styles */
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.slide {
+    flex: 0 0 auto;
+    width: 25%; /* Four slides visible on larger screens */
+    scroll-snap-align: start;
+    cursor: pointer;
+}
+
+/* Media queries for tablet */
+@media only screen and (max-width: 768px) {
+    .slide {
+        width: 33.33%; /* Three slides visible on tablets */
+    }
+}
+
+/* Media queries for mobile */
+@media only screen and (max-width: 480px) {
+    .slide {
+        width: 50%; /* Two slides visible on mobile */
+    }
 }
