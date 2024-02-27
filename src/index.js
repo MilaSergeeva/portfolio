@@ -5,13 +5,22 @@ import herokuIconImg from '../images/heroku.svg';
 import typeScriptIconImg from '../images/ts.svg';
 import sassImg from '../images/sass-1.svg';
 import rubyOnRailsImg from '../images/RubyOnRails.svg';
-import diplom from '../images/diploma.png';
+import diploma from '../images/diploma.png';
+import dipl2 from '../images/dipl2.png';
 import cypressImg from '../images/cypress.svg';
 import websocketImg from '../images/websocket.svg';
 import typescriptImg from '../images/typescript.svg';
 import reduxImg from '../images/redux.svg';
 import jestImg from '../images/jest.svg';
 import { initialCards } from '../config.js';
+
+import blaze from '../images/Blaze_Inclusion_Awards_Overview.png';
+import annual from '../images/The_Annual_Overview.png';
+import herTech from '../images/HerTech_Overview.jpg';
+import door from '../images/Door_Overview.jpg';
+import dc from '../images/Diversify_Consult_Overview.jpg';
+import dns from '../images/Summit_Overview.png';
+import logos from '../images/Logos.png';
 
 // Картиночки
 const popups = document.querySelectorAll('.popup');
@@ -28,11 +37,54 @@ const navButton = document.querySelector('.navbar__menu-button');
 const navMenu = document.querySelector('.navbar');
 const navMenuItem = document.querySelectorAll('.navbar__menu-item');
 const docPdf = document.querySelectorAll('.docs-pdf');
+const slide = document.querySelectorAll('.slide');
 
 const cards = document.querySelector('.cards');
 
-docPdf[0].addEventListener('click', openPopupPdf);
-docPdf[1].addEventListener('click', openPopupPdf);
+console.log(docPdf);
+docPdf[0].addEventListener('click', function () {
+    openPopupPdf(diploma);
+});
+docPdf[1].addEventListener('click', function () {
+    return openPopupPdf(dipl2);
+});
+
+slide[0].addEventListener('click', function () {
+    return openPopupPdf(blaze);
+});
+slide[1].addEventListener('click', function () {
+    return openPopupPdf(annual);
+});
+slide[2].addEventListener('click', function () {
+    return openPopupPdf(herTech);
+});
+slide[3].addEventListener('click', function () {
+    return openPopupPdf(door);
+});
+slide[4].addEventListener('click', function () {
+    return openPopupPdf(dc);
+});
+slide[5].addEventListener('click', function () {
+    return openPopupPdf(dns);
+});
+slide[6].addEventListener('click', function () {
+    return openPopupPdf(logos);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var prevButton = document.querySelector('.prev');
+    var nextButton = document.querySelector('.next');
+
+    // Добавляем слушатель события для кнопки "предыдущий слайд"
+    prevButton.addEventListener('click', function () {
+        plusSlides(-1);
+    });
+
+    // Добавляем слушатель события для кнопки "следующий слайд"
+    nextButton.addEventListener('click', function () {
+        plusSlides(1);
+    });
+});
 
 navButton.addEventListener('click', toggleMenu);
 
@@ -90,8 +142,9 @@ const closePopupOverlay = function (event) {
     }
 };
 
-function openPopupPdf(event) {
-    popupDocsImg.src = diplom;
+function openPopupPdf(a) {
+    console.log('here', a);
+    popupDocsImg.src = a;
 
     togglePopupClass(popupDocs);
 }
@@ -288,20 +341,21 @@ popupCloseBtns.forEach((el) => {
 
 //Slider
 
-var slideIndex = 1;
+let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
     showSlides((slideIndex += n));
 }
 
-function currentSlide(n) {
-    showSlides((slideIndex = n));
-}
+// function currentSlide(n) {
+//     showSlides((slideIndex = n));
+// }
 
 function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName('mySlides');
+    let i;
+    let slides = document.getElementsByClassName('slide');
+    console.log(slides);
     if (n > slides.length) {
         slideIndex = 1;
     }

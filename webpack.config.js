@@ -12,7 +12,7 @@ module.exports = {
     },
     mode: 'development',
     devServer: {
-        contentBase: path.resolve(__dirname, './docs'),
+        static: path.resolve(__dirname, 'public'), // Specify the directory to serve static files from
         compress: true,
         port: 8080,
         open: true,

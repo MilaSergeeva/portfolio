@@ -35,6 +35,11 @@
                         <div class='avatar-smile'></div>
                         <h1 class="home-title anim-on-scroll anim-stop">Hi! I'm Mila! <br><br> A front-end developer.</h1>
                     </div>
+
+                    <div class="section__container ">
+                        <h2 class="title anim-on-scroll anim-stop anim-start">A few words about myself</h2>
+                        <p class="about__text anim-on-scroll anim-stop anim-opacity">&nbsp; Transitioning into web development was a deliberate decision driven by a pursuit of professional growth. Initially self-taught through online resources, I later completed a comprehensive 10-month training program. Alongside formal education, I engaged in real-world projects to strengthen practical skills. This multifaceted approach has equipped me with a solid foundation and proactive mindset for success in web development. </p>
+                    </div>
                     
                     <div class="section__container">
                         <h2 class="hard-skill__title anim-on-scroll anim-stop anim-start">My skills</h2>
@@ -162,47 +167,45 @@
             <section id="contact" class='main-content contact-section'>
                 <div class='background-section background-contact'></div>
                 <div class="section__container ">
-                    <h2 class="title anim-on-scroll anim-stop anim-start">A few words about myself</h2>
-                    <p class="about__text anim-on-scroll anim-stop anim-opacity">&nbsp; Despite my previous experience, at some point I decided to develop myself as a web developer. In the beginning I studied using free curses, articles and of course YouTube. Then I found serious and high-quality training course for web developers. In total it took me 10 months to graduate. When I had free time I also took part in additional real projects. All that gave me good initial knowledge to enter the profession. </p>
-                    <div class="gallery">
-                        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-                        <div class="slide">
-                            <img src="Blaze Inclusion Awards Overview.png" alt="Blaze Inclusion Awards Overview">
+                    <h2 class="title anim-on-scroll anim-stop anim-start">Wordpresss/ UI/ UX/ Graphic design</h2>
+                    <!-- <p class="about__text anim-on-scroll anim-stop anim-opacity">&nbsp; Despite my previous experience, at some point I decided to develop myself as a web developer. In the beginning I studied using free curses, articles and of course YouTube. Then I found serious and high-quality training course for web developers. In total it took me 10 months to graduate. When I had free time I also took part in additional real projects. All that gave me good initial knowledge to enter the profession. </p> -->
+                    <div class="gallery_slider">
+                        <button class="prev">&#10094;</button>
+                        <div class="gallery">
+                            <!-- <button class="prev">&#10094;</button> -->
+                            <div class="slide">
+                                <img class="slide_img" src="<%=require('../images/Blaze_Inclusion_Awards_Overview.png')%>" alt="Blaze Inclusion Awards Overview">
+                            </div>
+                            <div class="slide">
+                                <img class="slide_img" src="<%=require('../images/The_Annual_Overview.png')%>" alt="The Annual Overview">
+                            </div>
+                            <div class="slide">
+                                <img class="slide_img" src="<%=require('../images/HerTech_Overview.jpg')%>" alt="HerTech Overview">
+                            </div>
+                            <div class="slide">
+                                <img class="slide_img" src="<%=require('../images/Door_Overview.jpg')%>" alt="Door Overview">
+                            </div>
+                            <div class="slide">
+                                <img class="slide_img" src="<%=require('../images/Diversify_Consult_Overview.jpg')%>" alt="Diversify Consult Overview">
+                            </div>
+                            <div class="slide">
+                                <img class="slide_img" src="<%=require('../images/Summit_Overview.png')%>" alt="Summit Overview">
+                            </div>
+                            <div class="slide">
+                                <img class="slide_img" src="<%=require('../images/Logos.png')%>" alt="Logos">
+                            </div>
+                            <!-- <button class="next" >&#10095;</button> -->
+                            <!-- Add more slides here -->
                         </div>
-                        <div class="slide">
-                            <img src="The Annual Overview.png" alt="The Annual Overview">
-                        </div>
-                        <div class="slide">
-                            <img src="HerTech Overview.jpg" alt="HerTech Overview">
-                        </div>
-                        <div class="slide">
-                            <img src="Door Overview.jpg" alt="Door Overview">
-                        </div>
-                        <div class="slide">
-                            <img src="Diversify Consult Overview.jpg" alt="Diversify Consult Overview">
-                        </div>
-                        <div class="slide">
-                            <img src="Summit Overview.png" alt="Summit Overview">
-                        </div>
-                        <div class="slide">
-                            <img src="Logos.png" alt="Logos">
-                        </div>
-                        <button class="next" onclick="plusSlides(1)">&#10095;</button>
-                        <!-- Add more slides here -->
+                        <button class="next" >&#10095;</button>
                     </div>
                     <div class="docs-container anim-on-scroll anim-stop anim-opacity">
-                        <figure class='docs-pdf'>
-                            <figcaption class="docs-pdf__caption">
-                                <h3 class='docs-pdf__title'>Certificate of Completion</h3>
-                            </figcaption>
-                            <img class='docs-pdf__img' src="<%=require('../images/diploma.png')%>" alt="diplom2">
-
-                        </figure>
+                       
                         <figure class='docs-pdf'>
                             <figcaption class="docs-pdf__caption">
                                 <h3 class='docs-pdf__title'>Certificate of Completion 1</h3>
                             </figcaption>
-                            <img class='docs-pdf__img' src="<%=require('../images/diploma.png')%>" alt="diplom2">
+                            <img class='docs-pdf__img' src="<%=require('../images/diploma.png')%>" alt="diplom1">
                         </figure>
                         <figure class='docs-pdf'>
                             <figcaption class="docs-pdf__caption">
@@ -265,12 +268,12 @@
             </div> 
         </div>
 
-        <template id="myModal" class="modal">
+        <!-- <template id="myModal" class="modal">
             <span class="close cursor" onclick="closeModal()">&times;</span>
             <div class="modal-content" id="modalContent">
-                <!-- Modal content will be dynamically added here -->
+                
             </div>
-        </template>
+        </template> -->
 
         <template class='card-template'> 
             <figure class="card">
