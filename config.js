@@ -52,8 +52,7 @@ const websocket = `<li class="icon__element"><img src="#" alt='websocket' class=
 
 // document.querySelector('.postmanIcon').src = postmanIconImg;
 
-const initialCards = [
-    {
+const initialCards = [{
         title: 'Space burger',
         description: [
             "'Space burger' - application was built with React, Redux, Typescript, Test Coverage - Jest annd Cypress.",
@@ -153,18 +152,18 @@ const initialCards = [
             herokuIcon,
         ],
     },
-    {
-        title: 'Mesto',
-        description: [
-            "'Mesto' It is a single page application. User can share their pictures with caption.",
-            'Functionality: edit profile information, add new cards, delete and like cards, view card.',
-        ],
-        githubUrl: 'https://github.com/MilaSergeeva/mesto',
-        url: 'https://milasergeeva.github.io/mesto/',
-        imgUrl: mestoImg,
-        id: 6,
-        tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout, webpackIcon],
-    },
+    // {
+    //     title: 'Mesto',
+    //     description: [
+    //         "'Mesto' It is a single page application. User can share their pictures with caption.",
+    //         'Functionality: edit profile information, add new cards, delete and like cards, view card.',
+    //     ],
+    //     githubUrl: 'https://github.com/MilaSergeeva/mesto',
+    //     url: 'https://milasergeeva.github.io/mesto/',
+    //     imgUrl: mestoImg,
+    //     id: 6,
+    //     tech: [jsIcon, cssIcon, htmdIcon, responsiveLeyout, webpackIcon],
+    // },
 
     {
         title: 'Turbina',
